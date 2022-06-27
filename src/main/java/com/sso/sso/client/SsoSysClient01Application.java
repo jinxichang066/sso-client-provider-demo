@@ -1,7 +1,8 @@
-package com.example.sso.client;
+package com.sso.sso.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * SSO-客户端1-Demo启动类
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author 程序员小强
  */
 @SpringBootApplication
+@ComponentScan(basePackages = {"com.example.sso.***"})
 public class SsoSysClient01Application {
 
     public static void main(String[] args) {

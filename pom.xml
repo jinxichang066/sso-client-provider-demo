@@ -69,6 +69,14 @@
             <version>1.8</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>sso-sys-client</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/lib/sso-client.jar</systemPath>
+        </dependency>
+
     </dependencies>
 
     <build>
