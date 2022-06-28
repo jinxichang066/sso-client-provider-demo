@@ -4,21 +4,21 @@
 集成步骤<br />
 
 ####1. sso-client-provider项目打成jar包(子系统不用操作)
-- 进入sso-client-provider项目下，先清空target：mvn clean package
+- 进入sso-client-provider项目下，先清空target：mvn clean
 - 打包：mvn package -DskipTests=true
-- 生成sso-client.jar
+- 生成sso-client-jar-with-dependencies.jar
 
 ####2. 其他子系统集成(子系统的操作)
-- 将sso-client.jar引用项目中。以maven为例，有两种方式：  
+- 将sso-client-jar-with-dependencies.jar引用项目中。以maven为例，有两种方式：  
 ######1.第一种方式是通过maven将本地jar安装到本地仓库中。  
-######2.第二种方式则是将本地jar保存至项目的lib中，注意需要在项目的根目录中添加一个lib，将jar拷贝至lib中。本示例采用第二种方式,POM添加： 
+######2.第二种方式则是将本地jar保存至项目的lib中，需要在项目的根目录中添加一个lib，将jar拷贝至lib中。本示例采用第二种方式,POM添加： 
 ```
 <dependency>
-            <groupId>com.sso</groupId>
+            <groupId>com.example</groupId>
             <artifactId>sso-sys-client</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>${pom.basedir}/lib/sso-client.jar</systemPath>
+            <systemPath>${pom.basedir}/lib/sso-client-jar-with-dependencies.jar</systemPath>
 </dependency>
 ```
 - application配置文件配置  
