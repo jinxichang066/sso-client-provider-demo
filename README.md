@@ -17,18 +17,18 @@
 ```
 - application配置文件配置  
 ```
-#系统编码(与认证中心一致)
-sys.config.mySysCode=sys-client01
-#MD5签名秘钥(与认证中心-平台详情-添加的秘钥一致)
+#系统编码(认证中心提供)
+sys.config.mySysCode=sys-client-zhijian
+#MD5签名秘钥(认证中心提供)
 sys.config.ssoAuthSecret=1234567890
 
-#认证中心登录地址
+#认证中心登录地址(认证中心提供)
 sys.config.ssoAuthLoginUrl=http://172.16.18.71:8010/login
-#当前客户端web地址
-sys.config.clientWebUrl=http://localhost:8801
-#本系统退出登录url
-sys.config.myLoginOutUrl=http://localhost:8801/logOutBySsoAuth
-#认证中心开放接口地址
+#当前客户端web地址(即当前应用的主页url)
+sys.config.clientWebUrl=http://www.sso.test.com:8801
+#本系统退出登录url(即当前应用的ip:port/应用上下文/logOutBySsoAuth，本样例没有配置上下文所以省略)
+sys.config.myLoginOutUrl=http://www.sso.test.com:8801/logOutBySsoAuth
+#认证中心开放接口地址(认证中心提供)
 sys.config.ssoAuthGetWayUrl=http://172.16.18.71:9901/api/open/gateway
 ```
 - 主启动类中添加包扫描注解
